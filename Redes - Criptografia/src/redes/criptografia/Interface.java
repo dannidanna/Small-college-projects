@@ -5,6 +5,8 @@
  */
 package redes.criptografia;
 
+import java.math.BigInteger;
+
 /**
  *
  * @author danni
@@ -27,21 +29,164 @@ public class Interface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        numAutorizacion = new javax.swing.JTextField();
+        numFactura = new javax.swing.JTextField();
+        nitInput = new javax.swing.JTextField();
+        fechaTransa = new javax.swing.JTextField();
+        montoTrans = new javax.swing.JTextField();
+        claveInput = new javax.swing.JTextField();
+        btnGenerar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        codigo = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("CODIGO DE CONTROL");
+
+        jLabel2.setText("Número de Autorización:");
+
+        jLabel3.setText("Número de Factura:");
+
+        jLabel4.setText("NIT / CI del Cliente:");
+
+        jLabel5.setText("Fecha de la Transacción:");
+
+        jLabel6.setText("Monto de la Transacción:");
+
+        jLabel7.setText("Llave de dosificación:");
+
+        btnGenerar.setText("GENERAR ");
+        btnGenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarActionPerformed(evt);
+            }
+        });
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel8.setText("CODIGO DE CONTROL : ");
+
+        codigo.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        codigo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        codigo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addGap(18, 18, 18)
+                .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 684, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel6)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel2))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel4)
+                                            .addGap(24, 24, 24))
+                                        .addComponent(jLabel5))
+                                    .addComponent(jLabel7))
+                                .addGap(34, 34, 34)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(claveInput, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(numAutorizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(numFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nitInput, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fechaTransa, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(montoTrans, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(246, 246, 246)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(276, 276, 276)
+                        .addComponent(btnGenerar)))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 483, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(numAutorizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(numFactura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(nitInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fechaTransa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(montoTrans, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(claveInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnGenerar)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
+        String numAut = numAutorizacion.getText();
+        String numFac = numFactura.getText();
+        String nit = nitInput.getText();
+        String fechaTrans = fechaTransa.getText();
+        String monto = montoTrans.getText();
+        String llave = claveInput.getText();
+        codigo.repaint();
+        codigo.setText(CodigoDeControl(numAut, numFac, nit, fechaTrans, monto, llave));
+    }//GEN-LAST:event_btnGenerarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,7 +222,265 @@ public class Interface extends javax.swing.JFrame {
             }
         });
     }
+    
+    static String CodigoDeControl(String numAut, String numFac, String nit, String fecha, String monto, String llave){
+        String codigo = "";
+        BigInteger suma = new BigInteger("0");
+        
+        for(int i=1; i<=2; i++){ 
+            String cadena = String.valueOf(obtenerVerhoeff(numFac));
+            numFac = numFac + cadena;
+            String cadena1 = String.valueOf(obtenerVerhoeff(nit));
+            nit = nit + cadena1;
+            String cadena2 = String.valueOf(obtenerVerhoeff(fecha));
+            fecha = fecha + cadena2;
+            String cadena3 = String.valueOf(obtenerVerhoeff(monto));
+            monto = monto + cadena3;
+            }
+            
+            suma = suma.add(new BigInteger(numFac));
+            suma = suma.add(new BigInteger(nit));
+            suma = suma.add(new BigInteger(fecha));
+            suma = suma.add(new BigInteger(monto));
+            int i =1;
+            String cad = suma.toString();
+            String cad1="";
+            String cad2="";
+            String cad3="";
+            String cad4="";
+            String cad5="";
+            String aux = "";
+            while(i<=5){
+            String cadena = String.valueOf(obtenerVerhoeff(cad));
+            aux = aux + cadena;
+            cad = cad + cadena;
+                i++;
+            }
+            System.out.println(aux);
+            String n1="";
+            int num1=0;
+            String n2="";
+            int num2=0;
+            String n3="";
+            int num3=0;
+            String n4="";
+            int num4=0;
+            String n5="";
+            int num5=0;
+ 
+                n1 = aux.substring(0,1);
+                num1 = Integer.parseInt(n1)+1;
+                n2 = aux.substring(1,2);
+                num2 = Integer.parseInt(n2)+1;
+                n3 = aux.substring(2,3);
+                num3 = Integer.parseInt(n3)+1;
+                n4 = aux.substring(3,4);
+                num4 = Integer.parseInt(n4)+1;
+                n5 = aux.substring(4,5);
+                num5 = Integer.parseInt(n5)+1;
+                
+            
+                cad1 = llave.substring(0, num1);
+                numAut = numAut + cad1;
+                cad2 = llave.substring(num1,(num1+num2));
+                numFac = numFac + cad2;
+                cad3 = llave.substring((num1+num2),((num1+num2)+num3));
+                nit = nit + cad3;
+                cad4 = llave.substring(((num1+num2)+num3), (((num1+num2)+num3)+num4));
+                fecha = fecha + cad4;
+                System.out.println("llaveSub " + fecha);
+                cad5 = llave.substring((num1+num2+num3+num4), (num1+num2+num3+num4)+num5);
+                monto = monto + cad5;
+                
+                
+               //paso 2 finaliza
+               
+               String cadenaConcadenada = numAut + numFac + nit + fecha + monto;
+               String cadenaLlave = llave + aux;
+               System.out.println("Mesaje " + cadenaConcadenada);
+               System.out.println("llave " + cadenaLlave);
+               String mensajeRc4 = CifrarMensajeRC4(cadenaConcadenada, cadenaLlave);
+               System.out.println("Mesaje rc4 " + mensajeRc4);
+               int sumatoriaTotal= obtenerAscii(mensajeRc4);
+               System.out.println("SUmatoria total "+ sumatoriaTotal);
+               
+               int auxPar;
+               int sumPar[]=new int[5];
+               int sum = 1;
+               int p=0;
+               int x=0;
+               for(int k=0; k<5 ; k++){
+                   int res=0;
+                   while(x<mensajeRc4.length()){
+                        auxPar = mensajeRc4.charAt(x);
+                        res = res +auxPar;
+                        x=x+5;
+                   }
+                   sumPar[k]=res;
+                   x=0;
+                   x=x+k+1;
+                   }
+               
+               // paso 3 finaliza
+               
+               //paso 5
+              
+              int mul1 = (sumatoriaTotal * sumPar[0])/num1;
+              System.out.println("mul 1 "+ mul1);
+              int mul2 = (sumatoriaTotal * sumPar[1])/num2;
+              int mul3 = (sumatoriaTotal * sumPar[2])/num3;
+              int mul4 = (sumatoriaTotal * sumPar[3])/num4;
+              int mul5 = (sumatoriaTotal * sumPar[4])/num5;
+              int mulTotal = mul1 + mul2+ mul3 + mul4+ mul5;
+              System.out.println("MulTotal" + mulTotal);
+              
+              String base64 = ObtenerBase64(mulTotal);
+              
+              String llaveFinal = llave + (num1-1)+(num2-1)+(num3-1)+(num4-1)+(num5-1);
+              String allenFinal = CifrarMensajeRC4(base64,llaveFinal);
+              
+              String codigoFinal="";
+              for(int h=0; h<allenFinal.length(); h++){
+                  String cod = allenFinal.substring(h, h+2);
+                  
+                          codigoFinal =codigoFinal + cod + "-";
+              }
+              
+        
+        return allenFinal;
+    }
+    
+    //CifrarMensajeRC4
+    static String CifrarMensajeRC4(String mensaje, String llave){
+        int state[]= new int[256];
+        int x=0, y=0, index1=0, index2=0, nMen, i, aux;
+        String mensajeCifrado = "";
+        
+        for(i=0; i<=255; i++ ){
+            state[i] = i;
+        }
+        for(i=0; i<=255; i++ ){
+            index2 = (llave.charAt(index1)+state[i]+index2) % 256;
+            aux = state[i];
+            state[i]= state[index2];
+            state[index2] = aux;
+            index1 = (index1 + 1) % llave.length();
+        }
+        for(i=0; i<=(mensaje.length()-1); i++ ){
+            x = (x+1)%256;
+            y = (state[x]+y) %256;
+            aux = state[x];
+            state[x] = state[y];
+            state[y] = aux;
+            nMen = (mensaje.charAt(i))^ state[(state[x]+state[y])% 256];
+            mensajeCifrado = mensajeCifrado +'-'+ RellenaCero(ConvierteAHexadecimal(nMen));
+        }
+        
+       String resp= mensajeCifrado.substring(1, mensajeCifrado.length());
+        String resp1 = resp.replace("-", "");
+        return resp1.toUpperCase(); 
+        
+    }
+    
+    static String ConvierteAHexadecimal(int nMen){
+        String res = "";
+        res = Integer.toHexString(nMen);
+        return res;
+    }
+    
+    static String RellenaCero(String num){
+        String res="";
+        if(num.length()==1){
+            res = '0'+num;
+        }
+        else res = num;
+        return res;
+    }
+    
+    
+    //CifrarMensajeRC4
+    
+    //BASE
+    static String ObtenerBase64(int numero){
+        char diccionario[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T','U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd','e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n','o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x','y', 'z', '+', '/' };
+        int cociente =1, resto;
+        String palabra = "";
+        
+        while(cociente>0){
+            cociente = numero/64;
+            resto = numero % 64;
+            palabra = diccionario[resto] + palabra;
+            numero = cociente;
+        }
+        
+        return palabra;
+    }
+    //BASE
+    
+    //OBTENER
+    static int obtenerVerhoeff(String cifra){
+        int mul[][]={{0,1,2,3,4,5,6,7,8,9},{1,2,3,4,0,6,7,8,9,5},{2,3,4,0,1,7,8,9,5,6},{3,4,0,1,2,8,9,5,6,7},{4,0,1,2,3,9,5,6,7,8},{5,9,8,7,6,0,4,3,2,1},{6,5,9,8,7,1,0,4,3,2},{7,6,5,9,8,2,1,0,4,3},{8,7,6,5,9,3,2,1,0,4},{9,8,7,6,5,4,3,2,1,0}}; 
+        int per[][]={{0,1,2,3,4,5,6,7,8,9},{1,5,7,6,2,8,3,0,9,4},{5,8,0,3,7,9,6,1,4,2},{8,9,1,6,0,4,3,5,2,7},{9,4,5,3,1,2,6,8,7,0},{4,2,8,6,5,7,3,9,0,1},{2,7,9,3,8,0,6,4,1,5},{7,0,4,6,9,1,3,2,5,8}};
+        int inv[] = {0,4,3,2,1,5,6,7,8,9};
+        int check =0, i;
+        String numeroInvertido[];
+        numeroInvertido = invierteNumero(cifra);
+        
+        
+        for(i =0; i<=(numeroInvertido.length -1); i++){
+            
+            check = mul[check][per[((i+1)%8)][aNumero(numeroInvertido[i])]];
+            
+        }
+        return inv[check];
+    }
+    
+    static String[] invierteNumero(String sCadena){
+        int aux = sCadena.length();
+        String res[]= new String[aux];
+        String sCadenaInvertida="";
+        for (int x=sCadena.length()-1;x>=0;x--){
+		sCadenaInvertida = sCadenaInvertida + sCadena.charAt(x);}
+        for(int i=0; i<aux; i++){
+            res[i] = sCadenaInvertida.substring(i,i+1);}
+        return res;
+    }
+    
+    static int aNumero(String numInv){
+        int res= Integer.parseInt(numInv);
+        return res;
+    }
+    
+    static int obtenerAscii(String mensaje){
+        int res=0;
+        int aux = 0;
+        for (int x=0;x<mensaje.length();x++){
+            res = mensaje.charAt(x);
+            aux = aux +res;
+        }
+        return aux;
+    }
+    //OBTENER
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGenerar;
+    private javax.swing.JTextField claveInput;
+    private javax.swing.JLabel codigo;
+    private javax.swing.JTextField fechaTransa;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField montoTrans;
+    private javax.swing.JTextField nitInput;
+    private javax.swing.JTextField numAutorizacion;
+    private javax.swing.JTextField numFactura;
     // End of variables declaration//GEN-END:variables
 }

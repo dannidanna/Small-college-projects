@@ -337,14 +337,14 @@ public class Interface extends javax.swing.JFrame {
               String base64 = ObtenerBase64(mulTotal);
               
               String llaveFinal = llave + (num1-1)+(num2-1)+(num3-1)+(num4-1)+(num5-1);
-              String allenFinal = CifrarMensajeRC4(base64,llaveFinal);
+              String allenFinal = CifrarRC4(base64,llaveFinal);
               
-              String codigoFinal="";
+              /*String codigoFinal="";
               for(int h=0; h<allenFinal.length(); h++){
                   String cod = allenFinal.substring(h, h+2);
                   
                           codigoFinal =codigoFinal + cod + "-";
-              }
+              }*/
               
         
         return allenFinal;
@@ -379,6 +379,36 @@ public class Interface extends javax.swing.JFrame {
        String resp= mensajeCifrado.substring(1, mensajeCifrado.length());
         String resp1 = resp.replace("-", "");
         return resp1.toUpperCase(); 
+        
+    }
+    static String CifrarRC4(String mensaje, String llave){
+        int state[]= new int[256];
+        int x=0, y=0, index1=0, index2=0, nMen, i, aux;
+        String mensajeCifrado = "";
+        
+        for(i=0; i<=255; i++ ){
+            state[i] = i;
+        }
+        for(i=0; i<=255; i++ ){
+            index2 = (llave.charAt(index1)+state[i]+index2) % 256;
+            aux = state[i];
+            state[i]= state[index2];
+            state[index2] = aux;
+            index1 = (index1 + 1) % llave.length();
+        }
+        for(i=0; i<=(mensaje.length()-1); i++ ){
+            x = (x+1)%256;
+            y = (state[x]+y) %256;
+            aux = state[x];
+            state[x] = state[y];
+            state[y] = aux;
+            nMen = (mensaje.charAt(i))^ state[(state[x]+state[y])% 256];
+            mensajeCifrado = mensajeCifrado +'-'+ RellenaCero(ConvierteAHexadecimal(nMen));
+        }
+        
+       String resp= mensajeCifrado.substring(1, mensajeCifrado.length());
+        //String resp1 = resp.replace("-", "");
+        return resp.toUpperCase(); 
         
     }
     

@@ -16,18 +16,18 @@ public class base {
         char allen[] = allenFinal.toCharArray();
         String codigoFinal="";
         int aux = allenFinal.length()/2 -1;
-        int s=1;
-                   int aux2 = allenFinal.length()+aux;
-                  char allenT[] = new char[aux2];
+        int aux2 = allenFinal.length()+aux;
+        char allenT[] = new char[aux2];
               for(int h=0; h<=aux2; h=h+2){
-                  if(h+3 > aux2){
-                  
+                  if(h-2<= aux2){
                   allenT[h] = allen[h];
                   allenT[h+1] = allen[h+1];
-                  allenT[h+3] ='-';}
+                  allenT[h+2] ='-';}
               }
-              for(int i=0; i<allenT.length; i++){
-        System.out.print(allenT[i]);}
+              for(int i=0; i<allen.length; i++){
+        System.out.print(allen[i]);}
+              System.out.print(aux + "suma");
+              System.out.print(aux2 + "suma");
     }
    static int suma(String mensajeRc4){
        int aux;
